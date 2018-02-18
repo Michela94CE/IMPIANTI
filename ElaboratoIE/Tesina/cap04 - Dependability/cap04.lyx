@@ -6,7 +6,67 @@
 \origin unavailable
 \textclass book
 \begin_preamble
-\usagepackage{matlab-prettifier}
+\usepackage{listings,xcolor,courier,bookmark}
+\usepackage{listingsutf8}
+\definecolor{darkblue}{named}{blue}
+\definecolor{darkred}{named}{red}
+\definecolor{grau}{named}{gray}
+\let\Righttorque\relax
+\lstset{
+captionpos=b,
+commentstyle=\color[rgb]{0.133,0.545,0.133},
+keywordstyle=\color{darkblue},
+stringstyle=\color{darkred},
+extendedchars=true,
+basicstyle=\small\ttfamily,
+showstringspaces=false,
+tabsize=2,
+numbers=left,
+numberstyle=\tiny,
+breakautoindent  = true,
+breakindent      = 2em,
+breaklines       = true,
+postbreak        = ,
+prebreak         = \raisebox{-.8ex}[0ex][0ex]{\Righttorque},
+showspaces=false, 
+showtabs=false, 
+showstringspaces=false,
+language=VHDL,
+frame=single,
+morecomment=[s]{--}
+}
+
+
+\renewcommand*{\lstlistingname}{Codice Componente}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhead{} 
+\fancyfoot{} 
+
+\fancyhead[RO,LE]{\bfseries \leftmark}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[LO,CE]{Impianti di Elaborazione}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\date{}
+\cfoot{}
+\usepackage{eso-pic,graphicx}
+\makeatletter
+\newcommand\BackgroundPicture[2]{
+\setlength{\unitlength}{1pt}
+\put(0,\strip@pt\paperheight){
+\parbox[t][\paperheight]{\paperwidth}{
+\vfill
+\centering\includegraphics[angle=#2]{#1}
+\vfill
+}
+}
+}
+\makeatother
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -122,10 +182,6 @@ Schema di riferimento
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -174,13 +230,13 @@ Per lo svolgimento, quindi il calcolo della reliability del sistema in figura,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-R_{sys}=R_{4}P(SistemaFunziona|Nodo4Funziona)+(1-R_{4})P(SistemaFunziona|Nodo4NonFunziona)
-\]
-
+\begin_inset Formula $R_{sys}=R_{4}P(SistemaFunziona|Nodo4Funziona)+(1-R_{4})P(SistemaFunziona|Nodo4NonFunziona)$
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 Si ottengono quindi due sottosistemi da studiare separatamente :
 \end_layout
 
@@ -243,11 +299,14 @@ Per cui si può scrivere la reliability del sottositema nel seguente modo
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-R_{sys1}=(1-R_{4})P(SistemaFunziona|Nodo4NonFunziona)=R_{1}(t)*\left[1-\left(1-R_{2}(t)\right)*\left(1-R_{3}(t)\right)\right]*\left(1-R_{4}(t)\right)
-\]
+\begin_inset Formula $R_{sys1}=(1-R_{4})P(SistemaFunziona|Nodo4NonFunziona)=$
+\end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R_{1}(t)*\left[1-\left(1-R_{2}(t)\right)*\left(1-R_{3}(t)\right)\right]*\left(1-R_{4}(t)\right)$
 \end_inset
 
 
@@ -313,11 +372,14 @@ Per cui si può scrivere la reliability del sottositema nel seguente modo
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-R_{sys2}=R_{4}P(SistemaFunziona|Nodo4Funziona)=R_{4}(t)*\left[1-\left(1-R_{2}(t)\right)*\left(1-R_{3}(t)\right)*\left(1-R_{5}(t)\right)\right]
-\]
+\begin_inset Formula $R_{sys2}=R_{4}P(SistemaFunziona|Nodo4Funziona)=$
+\end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R_{4}(t)*\left[1-\left(1-R_{2}(t)\right)*\left(1-R_{3}(t)\right)*\left(1-R_{5}(t)\right)\right]$
 \end_inset
 
 
@@ -325,11 +387,17 @@ R_{sys2}=R_{4}P(SistemaFunziona|Nodo4Funziona)=R_{4}(t)*\left[1-\left(1-R_{2}(t)
 
 \begin_layout Standard
 Quindi infine è possibile scrivere: 
-\begin_inset Formula 
-\[
-R_{sys}=R_{sys1}+R_{sys2}=R_{1}(t)*\left[1-\left(1-R_{2}(t)\right)*\left(1-R_{3}(t)\right)\right]*\left(1-R_{4}(t)\right)+R_{4}(t)*\left[1-\left(1-R_{2}(t)\right)*\left(1-R_{3}(t)\right)*\left(1-R_{5}(t)\right)\right]
-\]
+\end_layout
 
+\begin_layout Standard
+\begin_inset Formula $R_{sys}=R_{sys1}+R_{sys2}=R_{1}(t)*\left[1-\left(1-R_{2}(t)\right)*\left(1-R_{3}(t)\right)\right]*\left(1-R_{4}(t)\right)+$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R_{4}(t)*\left[1-\left(1-R_{2}(t)\right)*\left(1-R_{3}(t)\right)*\left(1-R_{5}(t)\right)\right]$
 \end_inset
 
 
@@ -1304,11 +1372,17 @@ Vi sono due possibili configurazioni:
 
 \begin_layout Standard
 Qundi la reliability totale del sistema è: 
-\begin_inset Formula 
-\[
-R_{sys}(t)=R_{m}(t)^{8}+8*R_{m}(t)^{7}\left(1-R_{m}(t)\right)+20*R_{m}(t)^{6}\left(1-R_{m}(t)\right){}^{2}+16*R_{m}(t)^{3}\left(1-R_{m}(t)\right){}^{5}+2*R_{m}(t)^{4}\left(1-R_{m}(t)\right){}^{4}
-\]
+\end_layout
 
+\begin_layout Standard
+\begin_inset Formula $R_{sys}(t)=R_{m}(t)^{8}+8*R_{m}(t)^{7}\left(1-R_{m}(t)\right)+20*R_{m}(t)^{6}\left(1-R_{m}(t)\right){}^{2}+$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $16*R_{m}(t)^{3}\left(1-R_{m}(t)\right){}^{5}+2*R_{m}(t)^{4}\left(1-R_{m}(t)\right){}^{4}$
 \end_inset
 
 
@@ -1828,6 +1902,7 @@ Di seguito è riportato il Reliability Block Diagram.
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1835,7 +1910,9 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/RBD.png
-	scale 70
+	scale 50
+	rotateAngle 270
+	rotateOrigin center
 
 \end_inset
 
@@ -1856,6 +1933,781 @@ RBD
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il diagramma rispecchia le caratteristiche del sistema: 
+\end_layout
+
+\begin_layout Itemize
+entrambi i bus sono necessari per il funzionamento del sistema.
+ I due bus sono ridondanti.
+ 
+\end_layout
+
+\begin_layout Itemize
+Il processore e il terminale sono ridondanti.
+ Entrambi sono indispensabili per il corretto funzionamento del sistema
+\end_layout
+
+\begin_layout Itemize
+L'INS può essere sostituito dalla combinazione di un AHRS e Doppler in caso
+ di guasto.
+ 
+\end_layout
+
+\begin_layout Itemize
+L'AHRS è presente con una ridondanza di 3.
+\end_layout
+
+\begin_layout Subsubsection
+Fault Tree
+\end_layout
+
+\begin_layout Standard
+Ragionando sulle caratteristiche del sistema è possibile affermare che esso
+ fallisce quando si verifica uno dei seguenti casi:
+\end_layout
+
+\begin_layout Itemize
+falliscono entrambe le repliche di ogni bus
+\end_layout
+
+\begin_layout Itemize
+falliscono entrambe le repliche di un Processing Unit
+\end_layout
+
+\begin_layout Itemize
+falliscono entrambe le replice del Remote Terminal
+\end_layout
+
+\begin_layout Itemize
+falliscono contemporaneamente l'INS e i blocchi per la sostituzione di quest'ult
+imo (tutti gli AHRS e il Doppler).
+\end_layout
+
+\begin_layout Standard
+Quindi, analizzando anche il Reliability Block Diagram è possibile costruire
+ il fault tree in questo modo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/FAULTTREE.png
+	scale 70
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fault Tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Riducendo tutto nella forma canonica di Sum-of-Product, per evidenziale
+ il Minimal cut-set, si ottiene il seguente fault tree:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/FaultTreeSOP.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fault tree con SOP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analizzando la figura possiamo scrivere:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Phi=\bar{(CPU1}\cap\bar{CPU2})\cup\bar{(RT1}\cap\bar{RT2})\cup\bar{(BUSA1}\cap\bar{BUSA2})\cup\bar{(BUSB1}\cap\bar{BUSB2})\cup$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\bar{(INS}\cap\bar{DOP})\cup\bar{(AHRS1}\cap\bar{AHRS2}\cap AHRS3\cap\bar{INS})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Calcolare la reliability in un'ora di volo
+\end_layout
+
+\begin_layout Standard
+Sfruttando i dati nella tabella si ha che:
+\end_layout
+
+\begin_layout Itemize
+Reliability Processing Unit: 
+\begin_inset Formula $R_{CPU}(t)=e^{-\frac{1}{3000}t}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Reliability Remote Terminal: 
+\begin_inset Formula $R_{RT}(t)=e^{-\frac{1}{2500}t}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Reliability BusA e BusB: 
+\begin_inset Formula $R_{BUS}(t)=e^{-\frac{1}{8000}t}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Reliability INS: 
+\begin_inset Formula $R_{INS}(t)=e^{-\frac{1}{1000}t}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Reliability Doppler: 
+\begin_inset Formula $R_{DOP}(t)=e^{-\frac{1}{500}t}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Reliability AHRS: 
+\begin_inset Formula $R_{AHRS}(t)=e^{-\frac{1}{1000}t}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Quindi possiamo definire le reliability dei nodi calcolate dopo un'ora:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nodo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MTTF(hr)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Failure rate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reliability
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Processing Unit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1/3000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.999666722
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Remote Terminal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1/2500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9996000800
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+AHRS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1/1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9990004998
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1/1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9990004998
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Doppler
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1/500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9980019987
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BUS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1/8000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9998750078
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La Reliability del sistema può essere calcolata utilizzando le relazioni
+ di serie e parallelo.
+ Pertanto si ha
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R_{sys}(t)=\left(1-\left(1-R_{CPU}(t)\right)^{2}\right)\left(1-\left(1-R_{RT}(t)\right)^{2}\right)\left(1-\left(1-R_{BUS}(t)\right)^{2}\right)^{2}*$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(1-\left(1-R_{INS}(t)\right)\left(1-R_{DOP}(t)\left(1-\left(1-R_{AHRS}(t)\right)^{3}\right)\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Di seguito è riportato il grafico della reliability considerando un intervallo
+ di tempo compreso tra una e 5 ore.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/esercizio5reliability.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Reliability
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/risultatodep.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ripetere il punto precedente considerando il fattore di copertura C
+\end_layout
+
+\begin_layout Standard
+Ora ripetiamo quanto fatto nel punto precedente considerando un fattore
+ di copertura c che rappresenta la probabilità che un fallimento del componente
+ processing Unit sia correttamente rilevato.
+\end_layout
+
+\begin_layout Standard
+In effetti il fattore di copertura entra in gioco nel calcolo della reliability
+ complessiva della coppia di processing unit:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R_{CPU^{*}}(t)=R_{CPU}(t)+c\left(1-R_{CPU}(t)\right)R_{CPU}(t)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Quindi la Reliability del sistema si modifica nel seguente modo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R_{sys}(t)=R_{CPU}(t)+c\left(1-R_{CPU}(t)\right)R_{CPU}(t)\left(1-\left(1-R_{RT}(t)\right)^{2}\right)\left(1-\left(1-R_{BUS}(t)\right)^{2}\right)^{2}*$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(1-\left(1-R_{INS}(t)\right)\left(1-R_{DOP}(t)\left(1-\left(1-R_{AHRS}(t)\right)^{3}\right)\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lo scopo è quello di determinare il fattore di copertura c necessario per
+ avere un 
+\begin_inset Formula $R_{sys}(t)=0.99999.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Quindi, conoscendo le singole reliability dei componenti, è possibile ricavare
+ il valore di c:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/valore di c.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Questo esercizio ha usufruito di tale codice Matlab per la creazione del
+ grafico e del calcolo del fattore di copertura:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[style=Matlab-editor]
+\end_layout
+
+\begin_layout Plain Layout
+
+%Calcolo la Reliability del sistema 
+\end_layout
+
+\begin_layout Plain Layout
+
+cpu=3000; 
+\end_layout
+
+\begin_layout Plain Layout
+
+rt=2500; 
+\end_layout
+
+\begin_layout Plain Layout
+
+ahrs=1000; 
+\end_layout
+
+\begin_layout Plain Layout
+
+ins=1000;
+\end_layout
+
+\begin_layout Plain Layout
+
+dop=500; 
+\end_layout
+
+\begin_layout Plain Layout
+
+bus=8000; 
+\end_layout
+
+\begin_layout Plain Layout
+
+t=0:0.5:5; 
+\end_layout
+
+\begin_layout Plain Layout
+
+rsis=(1-(1-exp(-t/cpu)).^2).*(1-(1-exp(-t/rt)).^2).*((1-(1-exp(-t/bus)).^2).^2).*(1-(1-
+exp(-t/ins)).*(1-exp(-t/dop)).*(1-(1-exp(-t/ahrs)).^3));
+\end_layout
+
+\begin_layout Plain Layout
+
+plot(t,rsis,'-*r',t(find(t==1)),rsis(find(t==1)),'ko'); 
+\end_layout
+
+\begin_layout Plain Layout
+
+xlabel('time [hr]'); ylabel('p'); 
+\end_layout
+
+\begin_layout Plain Layout
+
+disp('Reliability'); 
+\end_layout
+
+\begin_layout Plain Layout
+
+disp(rsis(find(t==1)));
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% calcolo del valore di, modificando la formula precedente per t=1
+\end_layout
+
+\begin_layout Plain Layout
+
+val=0.99999;
+\end_layout
+
+\begin_layout Plain Layout
+
+rsis2=(1-exp(-1/cpu))*exp(-1/cpu)*(1-(1-exp(-1/rt))^2)*((1-(1-exp(-1/bus))^2)^2)
+*(1-(1-exp(-1/ins))*(1-exp(-1/dop))*(1-(1-exp(-1/ahrs))^3)); 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%formula inversa per ottenere c 
+\end_layout
+
+\begin_layout Plain Layout
+
+c=(val-exp(-1/cpu))/rsis2; disp('Valore di c');
+\end_layout
+
+\begin_layout Plain Layout
+
+disp(c)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
 \end_layout
 
 \end_inset
