@@ -1,0 +1,17 @@
+[1] 421
+[1] surfaceflinger
+18441.244      2.868  
+tau = 0.245, 2-sided pvalue =< 2.22e-16
+[1] 421
+[1] system
+175670.07      66.17  
+tau = 0.422, 2-sided pvalue =< 2.22e-16
+[1] 421
+[1] mediaserver
+7949.1864     0.1777  
+tau = 0.101, 2-sided pvalue =0.0019307
+[1] 421
+[1] com.android.systemui
+123018.66     -54.03  
+tau = -0.499, 2-sided pvalue =< 2.22e-16
+

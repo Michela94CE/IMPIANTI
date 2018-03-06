@@ -1,0 +1,68 @@
+--------------------------------------------
+2186
+2186
+2186
+2186
+CSVs/CSV_L1093.csv
+[1] "CSVs/CSV_L1093.csv"
+function (x, as.factor = FALSE) 
+{
+    if (as.factor) {
+        labs <- colnames(x, do.NULL = FALSE, prefix = "")
+        res <- factor(.Internal(col(dim(x))), labels = labs)
+        dim(res) <- dim(x)
+        res
+    }
+    else .Internal(col(dim(x)))
+}
+<bytecode: 0x3d0fb10>
+<environment: namespace:base>
+[1] 4
+[1] 1094
+[1] surfaceflinger
+Levels: com.android.systemui mediaserver surfaceflinger system
+
+Call:
+NULL
+
+Coefficients:
+ Intercept           y  
+17344.2850     -0.4757  
+
+tau = -0.163, 2-sided pvalue =8.2619e-16
+[1] 1094
+[1] system
+Levels: com.android.systemui mediaserver surfaceflinger system
+
+Call:
+NULL
+
+Coefficients:
+Intercept          y  
+227351.71      12.65  
+
+tau = 0.327, 2-sided pvalue =< 2.22e-16
+[1] 1094
+[1] mediaserver
+Levels: com.android.systemui mediaserver surfaceflinger system
+
+Call:
+NULL
+
+Coefficients:
+ Intercept           y  
+7606.52392    -0.03135  
+
+tau = -0.0274, 2-sided pvalue =0.176
+[1] 1094
+[1] com.android.systemui
+Levels: com.android.systemui mediaserver surfaceflinger system
+
+Call:
+NULL
+
+Coefficients:
+Intercept          y  
+2.180e+05  7.737e+00  
+
+tau = 0.235, 2-sided pvalue =< 2.22e-16

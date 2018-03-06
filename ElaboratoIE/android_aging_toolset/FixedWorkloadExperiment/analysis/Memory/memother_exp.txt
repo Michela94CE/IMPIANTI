@@ -1,0 +1,336 @@
+[1] "./global/EXP/Free_chachedPSS.txt"
+Intercept 
+ 221.2805 
+          x 
+-0.07317073 
+null device 
+          1 
+[1] "./global/EXP/Free_chached.txt"
+Intercept 
+ 215.0229 
+          x 
+-0.02752294 
+null device 
+          1 
+[1] "./global/EXP/Free_free.txt"
+Intercept 
+ 186.6213 
+        x 
+0.0815772 
+null device 
+          1 
+[1] "./global/EXP/LostRam.txt"
+Intercept 
+ 224.3438 
+         x 
+-0.0734994 
+null device 
+          1 
+[1] "./global/EXP/TotalFree_.txt"
+Intercept 
+  230.848 
+          x 
+-0.08370044 
+null device 
+          1 
+[1] "./global/EXP/TotalUsed_.txt"
+Intercept 
+ 183.2879 
+        x 
+0.1262626 
+null device 
+          1 
+[1] "./global/EXP/Used_buffers.txt"
+Intercept 
+    210.5 
+x 
+0 
+null device 
+          1 
+[1] "./global/EXP/Used_PSS.txt"
+Intercept 
+    210.5 
+x 
+0 
+null device 
+          1 
+[1] "./global/EXP/Free_chachedPSS.txt"
+Intercept 
+ 221.2805 
+          x 
+-0.07317073 
+null device 
+          1 
+[1] "./global/EXP/Free_chached.txt"
+Intercept 
+ 215.0229 
+          x 
+-0.02752294 
+null device 
+          1 
+[1] "./global/EXP/Free_free.txt"
+Intercept 
+ 186.6213 
+        x 
+0.0815772 
+null device 
+          1 
+[1] "./global/EXP/LostRam.txt"
+Intercept 
+ 224.3438 
+         x 
+-0.0734994 
+null device 
+          1 
+[1] "./global/EXP/TotalFree_.txt"
+Intercept 
+  230.848 
+          x 
+-0.08370044 
+null device 
+          1 
+[1] "./global/EXP/TotalUsed_.txt"
+Intercept 
+ 183.2879 
+        x 
+0.1262626 
+null device 
+          1 
+[1] "./global/EXP/Used_buffers.txt"
+Intercept 
+    210.5 
+x 
+0 
+null device 
+          1 
+[1] "./global/EXP/Used_PSS.txt"
+Intercept 
+    210.5 
+x 
+0 
+null device 
+          1 
+[1] "./global/EXP/Free_chachedPSS.txt"
+Intercept 
+ 221.2805 
+          x 
+-0.07317073 
+null device 
+          1 
+[1] "./global/EXP/Free_chached.txt"
+Intercept 
+ 215.0229 
+          x 
+-0.02752294 
+null device 
+          1 
+[1] "./global/EXP/Free_free.txt"
+Intercept 
+ 186.6213 
+        x 
+0.0815772 
+null device 
+          1 
+[1] "./global/EXP/LostRam.txt"
+Intercept 
+ 224.3438 
+         x 
+-0.0734994 
+null device 
+          1 
+[1] "./global/EXP/TotalFree_.txt"
+Intercept 
+  230.848 
+          x 
+-0.08370044 
+null device 
+          1 
+[1] "./global/EXP/TotalUsed_.txt"
+Intercept 
+ 183.2879 
+        x 
+0.1262626 
+null device 
+          1 
+[1] "./global/EXP/Used_buffers.txt"
+Intercept 
+    210.5 
+x 
+0 
+null device 
+          1 
+[1] "./global/EXP/Used_PSS.txt"
+Intercept 
+    210.5 
+x 
+0 
+null device 
+          1 
+[1] "./global/EXP/Free_chachedPSS.txt"
+Intercept 
+ 221.2805 
+          x 
+-0.07317073 
+null device 
+          1 
+[1] "./global/EXP/Free_chached.txt"
+Intercept 
+ 215.0229 
+          x 
+-0.02752294 
+null device 
+          1 
+[1] "./global/EXP/Free_free.txt"
+Intercept 
+ 186.6213 
+        x 
+0.0815772 
+null device 
+          1 
+[1] "./global/EXP/LostRam.txt"
+Intercept 
+ 224.3438 
+         x 
+-0.0734994 
+null device 
+          1 
+[1] "./global/EXP/TotalFree_.txt"
+Intercept 
+  230.848 
+          x 
+-0.08370044 
+null device 
+          1 
+[1] "./global/EXP/TotalUsed_.txt"
+Intercept 
+ 183.2879 
+        x 
+0.1262626 
+null device 
+          1 
+[1] "./global/EXP/Used_buffers.txt"
+Intercept 
+    210.5 
+x 
+0 
+null device 
+          1 
+[1] "./global/EXP/Used_PSS.txt"
+Intercept 
+    210.5 
+x 
+0 
+null device 
+          1 
+[1] "./global/EXP/Free_chachedPSS.txt"
+Intercept 
+ 266506.4 
+        x 
+-34.91771 
+null device 
+          1 
+[1] "./global/EXP/Free_chached.txt"
+Intercept 
+ 238265.3 
+        x 
+-29.31818 
+null device 
+          1 
+[1] "./global/EXP/Free_free.txt"
+Intercept 
+ 48159.03 
+       x 
+5.885714 
+null device 
+          1 
+[1] "./global/EXP/LostRam.txt"
+Intercept 
+ 611504.5 
+        x 
+-69.09635 
+null device 
+          1 
+[1] "./global/EXP/TotalFree_.txt"
+Intercept 
+ 578338.9 
+        x 
+-80.19181 
+null device 
+          1 
+[1] "./global/EXP/TotalUsed_.txt"
+Intercept 
+  1559139 
+       x 
+111.8966 
+null device 
+          1 
+[1] "./global/EXP/Used_buffers.txt"
+Intercept 
+   559784 
+    x 
+107.2 
+null device 
+          1 
+[1] "./global/EXP/Used_PSS.txt"
+Intercept 
+ 997734.4 
+        x 
+0.3777579 
+null device 
+          1 
+[1] "./global/EXP/Free_chachedPSS.txt"
+Intercept 
+ 266506.4 
+        x 
+-34.91771 
+null device 
+          1 
+[1] "./global/EXP/Free_chached.txt"
+Intercept 
+ 238265.3 
+        x 
+-29.31818 
+null device 
+          1 
+[1] "./global/EXP/Free_free.txt"
+Intercept 
+ 48159.03 
+       x 
+5.885714 
+null device 
+          1 
+[1] "./global/EXP/LostRam.txt"
+Intercept 
+ 611504.5 
+        x 
+-69.09635 
+null device 
+          1 
+[1] "./global/EXP/TotalFree_.txt"
+Intercept 
+ 578338.9 
+        x 
+-80.19181 
+null device 
+          1 
+[1] "./global/EXP/TotalUsed_.txt"
+Intercept 
+  1559139 
+       x 
+111.8966 
+null device 
+          1 
+[1] "./global/EXP/Used_buffers.txt"
+Intercept 
+   559784 
+    x 
+107.2 
+null device 
+          1 
+[1] "./global/EXP/Used_PSS.txt"
+Intercept 
+ 997734.4 
+        x 
+0.3777579 
+null device 
+          1 

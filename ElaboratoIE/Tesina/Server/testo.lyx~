@@ -1,0 +1,585 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\begin_preamble
+\usepackage{listings,xcolor,courier,bookmark}
+\usepackage{listingsutf8}
+\definecolor{darkblue}{named}{blue}
+\definecolor{darkred}{named}{red}
+\definecolor{grau}{named}{gray}
+\let\Righttorque\relax
+\lstset{
+captionpos=b,
+commentstyle=\color[rgb]{0.133,0.545,0.133},
+keywordstyle=\color{darkblue},
+stringstyle=\color{darkred},
+extendedchars=true,
+basicstyle=\small\ttfamily,
+showstringspaces=false,
+tabsize=2,
+numbers=left,
+numberstyle=\tiny,
+breakautoindent  = true,
+breakindent      = 2em,
+breaklines       = true,
+postbreak        = ,
+prebreak         = \raisebox{-.8ex}[0ex][0ex]{\Righttorque},
+showspaces=false, 
+showtabs=false, 
+showstringspaces=false,
+language=VHDL,
+frame=single,
+morecomment=[s]{--}
+}
+
+
+\renewcommand*{\lstlistingname}{Codice Componente}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhead{} 
+\fancyfoot{} 
+
+\fancyhead[RO,LE]{\bfseries \leftmark}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[LO,CE]{Tesina in ASE: Architetture dei Sistemi di Elaborazione}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\date{}
+\cfoot{}
+\usepackage{eso-pic,graphicx}
+\makeatletter
+\newcommand\BackgroundPicture[2]{
+\setlength{\unitlength}{1pt}
+\put(0,\strip@pt\paperheight){
+\parbox[t][\paperheight]{\paperwidth}{
+\vfill
+\centering\includegraphics[angle=#2]{#1}
+\vfill
+}
+}
+}
+\makeatother
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language italian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2.5cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Descrizione
+\end_layout
+
+\begin_layout Standard
+L'azienda oggetto di tale progetto si chiama PubliEuro SaS.
+ Essa lavora nel campo della serigrafia ed è situata a Casagiove, città
+ in provincia di Caserta.
+ Si tratta per lo più di un'azienda a conduzione familiare, dove le due
+ socie sono madre e figlia, e si occupano della maggior parte delle decisioni
+ prende a livello direzionale.
+ Tale azienda è una PMI, dato che consta in totale meno di 10 dipendenti,
+ la maggior parte dei quali appartenenti al reparto operativo.
+ L'azienda offre servizio di stampa su prodotti, di qualsiasi tipo e materiale,
+ che procura essa stessa (acquistandola da fornitori terzi, eventualmente
+ assemblando parti minori) oppure portati direttamente dai clienti.
+ Di particolare rilievo, infine, è l'area marketing che, nonostante le dimension
+i contenute dell'azienda, cerca continuamente nuove opportunità lavorative,
+ svolgendo un'attività di promozione e diffusione del servizio sia verso
+ vecchi clienti che possibili nuovi.
+ 
+\end_layout
+
+\begin_layout Section
+Modello organizzativo
+\end_layout
+
+\begin_layout Standard
+Il modello organizzativo dell'azienda è stato rappresentato di seguito tramite
+ un diagramma ad albero.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/Organigramma.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+L'azienda prevede fondamentalmente una divisione in due parti: 
+\end_layout
+
+\begin_layout Itemize
+una 
+\series bold
+amministrativa/direzionale
+\series default
+: rappresentate per lo più da due/tre persone, che risultano essere anche
+ i proprietari;
+\end_layout
+
+\begin_layout Itemize
+una 
+\series bold
+operativa
+\series default
+: rappresentata dagli operai che svolgono i lavori manuali necessari.
+\end_layout
+
+\begin_layout Standard
+In particolare, possiamo individuare:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Direzione generale: 
+\series default
+si occupa delle varie decisioni aziendali e dei contatti con fornitori e
+ clienti;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Amministrazione: 
+\series default
+si occupa dell'aspetto amministrativo dei vari processi, interessandosi
+ di come essi vengano svolti e, in particolare, portati avanti e chiusi;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Contabilità: 
+\series default
+si occupa del ramo finaniario dell'azienda, con un occhio al pagamento delle
+ fatture, delle scadenze e degli stipendi degli operai;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Logistica in ingresso: 
+\series default
+si occupa del ritiro merci dai fornitori e dai clienti, dato che l'azienda
+ offre anche un servizio di stampa su oggetti propri;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Marketing: 
+\series default
+si occupa della 
+\begin_inset Quotes eld
+\end_inset
+
+cattura del cliente
+\begin_inset Quotes erd
+\end_inset
+
+, organizzando campagne e offerte per nuove e vecchie figure interessate
+ ai servizi dell'azienda;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Produzione: 
+\series default
+si occupa della realizzazione manuale dei prodotti/servizi.
+ Costituisce la parte più 
+\begin_inset Quotes eld
+\end_inset
+
+popolosa
+\begin_inset Quotes erd
+\end_inset
+
+ dell'azienda;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Logistica in uscita: 
+\series default
+si occupa della spedizione/consegna della merce realizzata.
+\end_layout
+
+\begin_layout Subsection
+Use case delle funzionalità
+\end_layout
+
+\begin_layout Standard
+Di seguito riportiamo lo use case delle funzionalità individuate durante
+ le interviste svolte in azienda.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/publieurosas_use_case_diagram.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Linear Responsibility Charting
+\end_layout
+
+\begin_layout Standard
+Di seguito riportiamo il LRC dell'azienda.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/LRC.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Modello funzionale (AS IS)
+\end_layout
+
+\begin_layout Standard
+Dopo la definizione dell'organigramma si è passati allo studio dei principali
+ processi di business attuali dell'azienda.
+ Per ognuno di essi si è effettuata una analisi e uno studio, volti a individuar
+ne le criticità.
+ Per far ciò, siamo partiti dalla loro classificazione: la modalità più
+ appropriata, dato il settore in cui agisce la società, ci è sembrata quella
+ di 
+\series bold
+Porter
+\series default
+, ma abbiamo provato (con successo) a studiare il nostro caso anche tramite
+ modelli di 
+\series bold
+Anthony
+\series default
+ e 
+\series bold
+Simon
+\series default
+.
+\end_layout
+
+\begin_layout Subsection
+Catena di Porter
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/porter.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dalla catena di Porter qui riportata, possiamo individuare, in particolare,
+ per i processi di 
+\series bold
+supporto
+\series default
+:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Gestione delle risorse umane
+\series default
+, svolto dal ramo Contabilità della nostra azienda per la stima delle buste
+ paga dei dipendenti;
+\end_layout
+
+\begin_layout Standard
+e per i processi 
+\series bold
+primari
+\series default
+:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Logistica interna ed esterna
+\series default
+, per il contatto con clienti e fornitori;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Marketing
+\series default
+, per la creazione e proposta di nuove offerte;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Operations
+\series default
+, per la realizzazione vera e propria dei prodotti.
+\end_layout
+
+\begin_layout Subsection
+Modello di Simon
+\end_layout
+
+\begin_layout Standard
+Secondo il modello di Simon, le attività aziendali sono divise in 
+\series bold
+difficilmente
+\series default
+ strutturabili, 
+\series bold
+mediamente
+\series default
+ strutturabili e 
+\series bold
+facilmente
+\series default
+ strutturabili.
+ Nella nostra analisi, abbiamo riconosciuto come le attività svolte dai
+ 
+\begin_inset Quotes eld
+\end_inset
+
+piani alti
+\begin_inset Quotes erd
+\end_inset
+
+ del modello organizzativo siano quelle difficilimente e mediamente strutturabil
+i.
+ Esse comprendono la definizione di obiettivi a lungo/medio termine, le
+ scelte strategiche e le decisioni circa i clienti su cui maggiormente puntare
+ con offerte e servizi puntuali.
+ L'attività facilmente strutturabili, invece, comprendono i processi di
+ produzione, in cui agiscono per lo più gli operai con lavori manuali.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/anthony.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Modello di Anthony
+\end_layout
+
+\begin_layout Standard
+In analogia con quanto detto detto per Simon, nel modello piramidale di
+ Anthony abbiamo riconosciuto la direzione, amministrazione, contabilità
+ e marketing come operative nelle attività strategiche e tattiche, mentre
+ l'area produzione agisce con operazioni quotidiane nelle attività operativa.
+ Il connubio dei tre è possibile vederlo nella piramide sottostante, che
+ ben sposa quanto detto nelle ultime tre sezioni.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/simon.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Processi di business
+\end_layout
+
+\begin_layout Standard
+Dopo un'intervista con diversi stakeholder, sono stati individuati i seguenti
+ processi di business per l'azienda in questione.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Vendita prodotto
+\series default
+: il cliente prende appuntamento con il delegato dell’azienda tramite telefonata
+, email oppure di persona.
+ Il cliente comunica la tipologia di prodotto da utilizzare per la stampa,
+ fornendo egli stesso la grafica da apporre e la modalità di consegna della
+ merce.
+ L’azienda presenta il preventivo, tenendo conto dell’eventuale urgenza
+ richiesta (un cliente può richiedere di essere servito con priorità).
+ Se il cliente accetta, l’ordine viene inserito nel registro apposito.
+ In base alle richieste dell’ordine e alle giacenze di magazzino, vengono
+ contattati i fornitori per comprare i materiali necessari.
+ Tale operazione è solitamente effettuata dalla dirigente.
+ Non appena i materiali giungono in azienda, l’ordine viene processato.
+ Al termine della realizzazione il prodotto viene consegnato secondo le
+ modalità concordate.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Servizio stampa
+\series default
+: il cliente prende appuntamento con il delegato dell’azienda tramite telefonata
+, email oppure di persona.
+ Il cliente comunica la tipologia di prodotto su cui applicare la stampa,
+ fornisce tale prodotto, fornisce la relativa grafica e indica la modalità
+ di consegna voluta.
+ Un dipendente dell’azienda valuta la fattibilità del servizio, dato che
+ in tal caso è il cliente a portare il prodotto su cui lavorare.
+ In caso di esito positivo, l’azienda presenta il preventivo, tenendo conto
+ dell’eventuale urgenza richiesta (un cliente può richiedere di essere servito
+ con priorità).
+ Se il cliente accetta, l’ordine viene inserito nel registro apposito.
+ Il cliente recapita la merce in azienda.
+ L’ordine sarà evaso non appena verrà il suo turno.
+ Al termine della realizzazione il prodotto viene consegnato secondo le
+ modalità concordate.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Rifornimento merci
+\series default
+: tale processo è avviato dal responsabile dell’azienda, che è anche il
+ responsabile della logistica in ingresso.
+ Tale processo comprende l’acquisto di: materie prime (come vernici, coloranti,
+ rotoli di per adesivi, altro), prodotti già richiesti in un ordine su cui
+ effettuare delle stampe e prodotti da stackare.
+ Infatti si è notato che in determinati periodi dell’anno vi è una crescita
+ nella richiesta di certi tipi di prodotti.
+ Un esempio è l’acquisto preventivo di magliette in estate oppure calendari
+ nel periodo natalizio, dato che vi è infatti un aumento nelle richieste.
+ Questo è fatto per velocizzare alcune evasioni.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Rappresentanza
+\series default
+: il responsabile del settore marketing periodicamente contatta sia potenziali
+ clienti che quelli già acquisiti, tramite visita di persona, email oppure
+ telefono.
+ In tali occasioni viene presentato sia il catalogo dei possibili servizi
+ dall’azienda, sia eventuali offerte basate sul grado di fedeltà del cliente.
+ Il contatto può, dunque, terminare con un nuovo ordine o un ulteriore appuntame
+nto.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Gestione dei dipendenti
+\series default
+: il responsabile del settore di amministrazione, quotidianamente, segna
+ in un registro le presenze dei dipendenti.
+ Tale registro viene utilizzato dal responsabile del settore di contabilità
+ per calcolare lo stipendio da erogare al personale mensilmente.
+ 
+\end_layout
+
+\begin_layout Standard
+Di seguito mostreremo come abbiamo modellato e analizzato i singoli processi,
+ descrivendone per ognuno il diagramma delle activity, il Data Flow Diagram
+ e l'Assembly Lines.
+\end_layout
+
+\begin_layout Section
+Modello tecnologico
+\end_layout
+
+\end_body
+\end_document

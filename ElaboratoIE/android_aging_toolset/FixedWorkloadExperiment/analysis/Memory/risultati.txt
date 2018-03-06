@@ -1,0 +1,64 @@
+--------------------------------------------
+840
+840
+840
+840
+CSVs/CSV_L420.csv
+[1] "CSVs/CSV_L420.csv"
+
+Analyzing csv CSVs/CSV_L420.csvfunction (x, as.factor = FALSE) 
+{
+    if (as.factor) {
+        labs <- colnames(x, do.NULL = FALSE, prefix = "")
+        res <- factor(.Internal(col(dim(x))), labels = labs)
+        dim(res) <- dim(x)
+        res
+    }
+    else .Internal(col(dim(x)))
+}
+<bytecode: 0x316b5c8>
+<environment: namespace:base>
+The  CSVs/CSV_L420.csv csv has 4 rowsThe  CSVs/CSV_L420.csv csv has 421 columnsThe  1 th element of the first column (m[r,1]) is  3[1] "The calculated slope is"
+
+Call:
+NULL
+
+Coefficients:
+Intercept          y  
+18441.244      2.868  
+
+[1] "The MannKendall Test returned:"
+tau = 0.245, 2-sided pvalue =< 2.22e-16
+The  CSVs/CSV_L420.csv csv has 421 columnsThe  2 th element of the first column (m[r,1]) is  4[1] "The calculated slope is"
+
+Call:
+NULL
+
+Coefficients:
+Intercept          y  
+175670.07      66.17  
+
+[1] "The MannKendall Test returned:"
+tau = 0.422, 2-sided pvalue =< 2.22e-16
+The  CSVs/CSV_L420.csv csv has 421 columnsThe  3 th element of the first column (m[r,1]) is  2[1] "The calculated slope is"
+
+Call:
+NULL
+
+Coefficients:
+Intercept          y  
+7949.1864     0.1777  
+
+[1] "The MannKendall Test returned:"
+tau = 0.101, 2-sided pvalue =0.0019307
+The  CSVs/CSV_L420.csv csv has 421 columnsThe  4 th element of the first column (m[r,1]) is  1[1] "The calculated slope is"
+
+Call:
+NULL
+
+Coefficients:
+Intercept          y  
+123018.66     -54.03  
+
+[1] "The MannKendall Test returned:"
+tau = -0.499, 2-sided pvalue =< 2.22e-16

@@ -1,0 +1,1775 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\begin_preamble
+\usepackage{listings,xcolor,courier,bookmark}
+\usepackage{listingsutf8}
+\definecolor{darkblue}{named}{blue}
+\definecolor{darkred}{named}{red}
+\definecolor{grau}{named}{gray}
+\let\Righttorque\relax
+\lstset{
+captionpos=b,
+commentstyle=\color[rgb]{0.133,0.545,0.133},
+keywordstyle=\color{darkblue},
+stringstyle=\color{darkred},
+extendedchars=true,
+basicstyle=\small\ttfamily,
+showstringspaces=false,
+tabsize=2,
+numbers=left,
+numberstyle=\tiny,
+breakautoindent  = true,
+breakindent      = 2em,
+breaklines       = true,
+postbreak        = ,
+prebreak         = \raisebox{-.8ex}[0ex][0ex]{\Righttorque},
+showspaces=false, 
+showtabs=false, 
+showstringspaces=false,
+language=VHDL,
+frame=single,
+morecomment=[s]{--}
+}
+
+
+\renewcommand*{\lstlistingname}{Codice Componente}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhead{} 
+\fancyfoot{} 
+
+\fancyhead[RO,LE]{\bfseries \leftmark}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[LO,CE]{Tesina in ASE: Architetture dei Sistemi di Elaborazione}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\date{}
+\cfoot{}
+\usepackage{eso-pic,graphicx}
+\makeatletter
+\newcommand\BackgroundPicture[2]{
+\setlength{\unitlength}{1pt}
+\put(0,\strip@pt\paperheight){
+\parbox[t][\paperheight]{\paperwidth}{
+\vfill
+\centering\includegraphics[angle=#2]{#1}
+\vfill
+}
+}
+}
+\makeatother
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language italian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2.5cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Lo scopo di tale test è quello di capire se il sistema operativo Android,
+ sotto esame, soffre del fenomeno del 
+\begin_inset Quotes eld
+\end_inset
+
+Software Aging
+\begin_inset Quotes erd
+\end_inset
+
+, ovvero quel fenomeno che comporta un degreado crescente delle prestazioni
+ del sistema causato da diverse problematiche quali memory leak, data corruption
+ ecc.
+\end_layout
+
+\begin_layout Standard
+Il test è stato realizzato tramite l'utilizzo di alcuni script il cui compito
+ è quello di lanciare applicazioni definite nei workload in maniera automatica,
+ ripetitiva e continuativa.
+ In particolare i workload che sono stati utilizzati sono i seguenti :
+\end_layout
+
+\begin_layout Enumerate
+Workload Fisso: in tale workload le applicazioni vengono lanciate continuamente
+ ogni 100 ms con l'obiettivo di stressare fortemente il sistema.
+\end_layout
+
+\begin_layout Enumerate
+Workload Variabile: in tale workload le applicazioni vengono lanciate con
+ un intensità variabile, spaziando tra 500 ms, 1500 ms e 2500 ms.
+ 
+\end_layout
+
+\begin_layout Standard
+Il dispositivo utilizzato per realizzare il test è il seguente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Brand
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Samsung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Modello
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Galaxy S6 edge
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sistema operativo 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Android 7.0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RAM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 GB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Memoria Interna
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+32 GB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CPU
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quad-core 1.5 GHz Cortex-A53 + Quad-core 2.1 GHz Cortex-A57
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Definizione Workload
+\end_layout
+
+\begin_layout Standard
+Per il test sono state utilizzate le applicazioni appartenenti a 3 diverse
+ categorie, come descritto dalla seguente tabella:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Information and Content
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Communication
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Basic
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+com.samsung.android.video
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+com.android.chrome
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+com.android.phone
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+com.google.android.music
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+com.sec.android.app.sbrowser
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+com.samsung.android.contacts
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+com.google.android.youtube
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+com.google.android.gm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+com.android.calendar
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+com.sec.android.app.camera
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+com.whatsapp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+com.samsung.android.messaging 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+com.sec.android.gallery3d
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+com.facebook.katana
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+com.sec.android.app.popupcalculator
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Risultati dell'esperimento Workload Fisso
+\end_layout
+
+\begin_layout Standard
+I risultati dell'esperimento sono stati ottenuti analizzando i file displayed.txt
+ e memorinfo.txt, al fine di analizzare il tempo di lancio delle attività
+ e le memory KPI.
+ 
+\end_layout
+
+\begin_layout Subsection
+Trends of LT activities
+\end_layout
+
+\begin_layout Standard
+In tale sezione sono riportate le considerazioni relative ai lunch time
+ delle activity, ovvero gli intervalli di tempo tra il lancio di una activity
+ e la sua apparizione.
+ In effetti se il lunch time aumenta progressivamente con il tempo sotto
+ l'influenza di un workload costante, allora è presente il fenomeno dell'aging.
+ Dall'analisi del file displayed.txt sono stati generati i plot relativi
+ alle activity soggette al test.
+ I dati sono stati analizzati tramite il test di Mann-Kendall che ha proprio
+ lo scopo di verificare la presenza di un trend tra i dati raccolti e il
+ tempo.
+ 
+\end_layout
+
+\begin_layout Standard
+Il test ha restituito i seguenti risultati:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/TrendWorkloadFixedActivity.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Risultati trend activity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In verde sono state evidenziate le activity che riportano un trend.
+\end_layout
+
+\begin_layout Subsection
+Trends of Memory KPI
+\end_layout
+
+\begin_layout Standard
+Tramite il test di Mann Kendall è stato studiato anche il trend relativo
+ ai Memory KPI.
+ In particolare sono stati ottenuti dei grafici che rappresentano l'andamento
+ delle caratteristiche della memoria (cache libera, quantità di RAM utilizzata
+ dai vari processi, quantità di RAM usata dalla shared memory etc..).
+ Una metrica importante da utilizzare, nel caso della memoria è la PSS (Proporti
+onal Set Size) di ogni processo, ovvero il conteggio (in KB) delle pagine
+ che esso ha in memoria.
+ In particolare sono stati considerati solo i seguenti processi:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Processo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+p-value
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Surfaceflinger 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.22e-16
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+System
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.22e-16
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+com.android.systemui
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.22e-16
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mediaserver
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0019307
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Di seguito sono riportati i grafici relativi ai 4 processi :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/surfaceflingerFixed.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Surfaceflinger
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/mediaserverFixed.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mediasever
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/systemFixed.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+System
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/systemuiFixed.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Systemui
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Regressione PCA based
+\end_layout
+
+\begin_layout Standard
+In tale sezione è stata effettuata un'analisi al fine di relazionare il
+ PSS_system con i restanti memory KPI's.
+ Sono stati presi in considerazione i seguenti paramentri :
+\end_layout
+
+\begin_layout Itemize
+Free_free
+\end_layout
+
+\begin_layout Itemize
+Free_chachedPSS
+\end_layout
+
+\begin_layout Itemize
+Free_chached
+\end_layout
+
+\begin_layout Itemize
+Used_PSS
+\end_layout
+
+\begin_layout Itemize
+Used_buffers
+\end_layout
+
+\begin_layout Itemize
+Total_Used
+\end_layout
+
+\begin_layout Itemize
+Total_Free
+\end_layout
+
+\begin_layout Itemize
+LostRam
+\end_layout
+
+\begin_layout Itemize
+PSS_Surfaceflinger
+\end_layout
+
+\begin_layout Itemize
+PSS_mediaserver
+\end_layout
+
+\begin_layout Itemize
+PSS_System
+\end_layout
+
+\begin_layout Itemize
+PSS_Systemui
+\end_layout
+
+\begin_layout Standard
+A questo punto viene effettuata una PCA considerando tutti i parametri ad
+ eccezione di PSS_System.:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/pcafisso.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PCA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si può notare la presenza di alcuni outlier.
+ In effetti questi corrispondono a punti presi nel corso dell'esperimento
+ e pertanto non sono eliminati in quanto presentano un consumo delle risorse
+ del sistema.
+ 
+\end_layout
+
+\begin_layout Standard
+Sono state selezionate le prime 7 componenti principali al fine di conservare
+ almeno il 95% della varianza iniziale.
+ In particolare è stata conservata il 96.556% della varianza.
+\end_layout
+
+\begin_layout Standard
+Successivamente è stata effettuata una regressione, mettendo come Y il PSS_Syste
+m e come X le componenti principali scelte.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/regressionepcafisso1.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il valore di 
+\begin_inset Formula $R^{2}$
+\end_inset
+
+di circa 0.17 indica un modello non molto buono.
+ Ciò significa che il modello non riesce ad esprire bene il legame tra le
+ componenti principali e PSS_System.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/regressionepcafisso2.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Di seguito sono effettuate alcune considerazioni sui residui.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/residuiPCAfisso.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+L'errore presenta una media circa nulla, ma la distribuzione non supera
+ il test di normalità.
+\end_layout
+
+\begin_layout Standard
+Continuando con il modello di regressione, possiamo ordinare le componenti
+ in relazione alla loro significatività sul modello e infine ricavare l'espressi
+one del modello.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/regressionepcafisso3.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Stepwise regression 
+\end_layout
+
+\begin_layout Standard
+Tramite il tool di JMP è stata effettuata la stepwise regression utilizzando
+ le variabili individuate precedentemente.
+ La regressione in questo caso è stata effettuata seguento un forward approach:
+\end_layout
+
+\begin_layout Standard
+Si è ottenuta la seguente regressione:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/stepwiseregressionfisso1.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/stepwiseregressionfisso2.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/stepwiseregressionfisso3.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il modello presenta un valore di 
+\begin_inset Formula $R^{2}$
+\end_inset
+
+ di circa 0.18, quindi il modello non riesce a spiegare bene il legame tra
+ le variabili considerate e PSS_System.
+ Il fattore più significativo risulta PSS_SystemUI.
+\end_layout
+
+\begin_layout Standard
+Di seguito sono riportate alcune considerazioni sui residui:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/errorestepwisefisso.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+L'errore presenta una media (circa) nulla, ma la distribuzione non verifica
+ la normalità.
+\end_layout
+
+\begin_layout Section
+Risultati dell'esperimento Workload Variabile
+\end_layout
+
+\begin_layout Standard
+I risultati dell'esperimento sono stati ottenuti analizzando i file displayed.txt
+ e memorinfo.txt, al fine di analizzare il tempo di lancio delle attività
+ e le memory KPI.
+\end_layout
+
+\begin_layout Subsection
+Trends of LT of activities
+\end_layout
+
+\begin_layout Standard
+In tale sezione sono riportate le considerazioni relative ai lunch time
+ delle activity, ovvero gli intervalli di tempo tra il lancio di una activity
+ e la sua apparizione.
+ In effetti se il lunch time aumenta progressivamente con il tempo sotto
+ l'influenza di un workload variabile, allora è presente il fenomeno dell'aging.
+ Dall'analisi del file displayed.txt sono stati generati i plot relativi
+ alle activity soggette al test.
+ I dati sono stati analizzati tramite il test di Mann-Kendall che ha proprio
+ lo scopo di verificare la presenza di un trend tra i dati raccolti e il
+ tempo.
+ 
+\end_layout
+
+\begin_layout Standard
+Il test ha restituito i seguenti risultati:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/TrendWorkloadVariabileActivity.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Risultati trend activity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In verde sono state evidenziate le activity che riportano un trend.
+\end_layout
+
+\begin_layout Subsection
+Trends of Memory KPI.
+\end_layout
+
+\begin_layout Standard
+Tramite il test di Mann Kendall è stato studiato anche il trend relativo
+ ai Memory KPI.
+ In particolare sono stati ottenuti dei grafici che rappresentano l'andamento
+ delle caratteristiche della memoria (cache libera, quantità di RAM utilizzata
+ dai vari processi, quantità di RAM usata dalla shared memory etc..).
+ Una metrica importante da utilizzare, nel caso della memoria è la PSS (Proporti
+onal Set Size) di ogni processo, ovvero il conteggio (in KB) delle pagine
+ che esso ha in memoria.
+ In particolare sono stati considerati solo i seguenti processi:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Processo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+p-value
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Surfaceflinger 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.2619e-16
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+System
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.22e-16
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+com.android.systemui
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.22e-16
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mediaserver
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.176
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Di seguito sono riportati i grafici relativi ai 4 processi :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/surfaceflinger.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Surfaceflinger
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/mediaserver.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mediasever
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/system.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+System
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/systemui.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Systemui
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Regressione PCA based
+\end_layout
+
+\begin_layout Standard
+In tale sezione è stata effettuata un'analisi al fine di relazionare il
+ PSS_system con i restanti memory KPI's.
+ Sono stati presi in considerazione i seguenti paramentri :
+\end_layout
+
+\begin_layout Itemize
+Free_free
+\end_layout
+
+\begin_layout Itemize
+Free_chachedPSS
+\end_layout
+
+\begin_layout Itemize
+Free_chached
+\end_layout
+
+\begin_layout Itemize
+Used_PSS
+\end_layout
+
+\begin_layout Itemize
+Used_buffers
+\end_layout
+
+\begin_layout Itemize
+Total_Used
+\end_layout
+
+\begin_layout Itemize
+Total_Free
+\end_layout
+
+\begin_layout Itemize
+LostRam
+\end_layout
+
+\begin_layout Itemize
+PSS_Surfaceflinger
+\end_layout
+
+\begin_layout Itemize
+PSS_mediaserver
+\end_layout
+
+\begin_layout Itemize
+PSS_System
+\end_layout
+
+\begin_layout Itemize
+PSS_Systemui
+\end_layout
+
+\begin_layout Standard
+A questo punto viene effettuata una PCA considerando tutti i parametri ad
+ eccezione di PSS_System.:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/PCAVARIABILE.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PCA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si può notare la presenza di alcuni outlier.
+ In effetti questi corrispondono a punti presi nel corso dell'esperimento
+ e pertanto non sono eliminati in quanto presentano un consumo delle risorse
+ del sistema.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/autovalorivariabile.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Autovalori
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sono state selezionate le prime 7 componenti principali al fine di conservare
+ almeno il 95% della varianza iniziale.
+ In particolare è stata conservata il 97.889% della varianza.
+\end_layout
+
+\begin_layout Standard
+Successivamente è stata effettuata una regressione, mettendo come Y il PSS_Syste
+m e come X le componenti principali scelte.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/modello1.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il valore di 
+\begin_inset Formula $R^{2}$
+\end_inset
+
+di circa 0.85 indica un modello abbastanza buono che riesce a conservare
+ circa 85% della varibilità data dai dati.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/modello2.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Di seguito sono effettuate alcune considerazioni sui residui.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/medianullaresiduopcavariabile.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+L'errore presenta una media circa nulla, ma la distribuzione non supera
+ il test di normalità:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/normalità.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Continuando con il modello di regressione, possiamo ordinare le componenti
+ in relazione alla loro significatività sul modello e infine ricavare l'espressi
+one del modello.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/modello3.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Stepwise regression 
+\end_layout
+
+\begin_layout Standard
+Tramite il tool di JMP è stata effettuata la stepwise regression utilizzando
+ le variabili individuate precedentemente.
+ La regressione in questo caso è stata effettuata seguento un forward approach:
+\end_layout
+
+\begin_layout Standard
+Si è ottenuta la seguente regressione:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/stepwisevariabilenuovo1.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/stepwisevariabilenuovo2.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/stimeordinatenuovovariabile.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/stepwisevariabilenuovo3.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il modello presenta un valore di 
+\begin_inset Formula $R^{2}$
+\end_inset
+
+ di circa 0.867, quindi il modello riesce a spiegare bene il legame tra le
+ variabili considerate e PSS_System.
+ Il fattore più significativo risulta PSS_SystemUI.
+\end_layout
+
+\begin_layout Standard
+Di seguito sono riportate alcune considerazioni sui residui:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/medianullaresiduostepwisevariabile1finale.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+L'errore presenta una media (circa) nulla, ma la distribuzione non verifica
+ la normalità.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/testnormalitastepwise1variabilefinale.PNG
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,8 @@
+./global/EXP/Free_chachedPSS.txt
+./global/EXP/Free_chached.txt
+./global/EXP/Free_free.txt
+./global/EXP/LostRam.txt
+./global/EXP/TotalFree_.txt
+./global/EXP/TotalUsed_.txt
+./global/EXP/Used_buffers.txt
+./global/EXP/Used_PSS.txt

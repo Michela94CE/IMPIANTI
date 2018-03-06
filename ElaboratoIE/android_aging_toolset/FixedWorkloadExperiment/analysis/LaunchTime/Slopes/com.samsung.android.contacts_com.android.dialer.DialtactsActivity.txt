@@ -1,0 +1,11 @@
+Slope
+0.0004581552
+
+p-value
+0.9757338
+
+Median
+1469.5
+
+90-percentile
+2877.9
