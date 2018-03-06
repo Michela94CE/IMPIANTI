@@ -1,0 +1,1941 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\begin_preamble
+\usepackage{listings,xcolor,courier,bookmark}
+\usepackage{listingsutf8}
+\definecolor{darkblue}{named}{blue}
+\definecolor{darkred}{named}{red}
+\definecolor{grau}{named}{gray}
+\let\Righttorque\relax
+\lstset{
+captionpos=b,
+commentstyle=\color[rgb]{0.133,0.545,0.133},
+keywordstyle=\color{darkblue},
+stringstyle=\color{darkred},
+extendedchars=true,
+basicstyle=\small\ttfamily,
+showstringspaces=false,
+tabsize=2,
+numbers=left,
+numberstyle=\tiny,
+breakautoindent  = true,
+breakindent      = 2em,
+breaklines       = true,
+postbreak        = ,
+prebreak         = \raisebox{-.8ex}[0ex][0ex]{\Righttorque},
+showspaces=false, 
+showtabs=false, 
+showstringspaces=false,
+language=VHDL,
+frame=single,
+morecomment=[s]{--}
+}
+
+
+\renewcommand*{\lstlistingname}{Codice Componente}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhead{} 
+\fancyfoot{} 
+
+\fancyhead[RO,LE]{\bfseries \leftmark}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[LO,CE]{Tesina in ASE: Architetture dei Sistemi di Elaborazione}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\date{}
+\cfoot{}
+\usepackage{eso-pic,graphicx}
+\makeatletter
+\newcommand\BackgroundPicture[2]{
+\setlength{\unitlength}{1pt}
+\put(0,\strip@pt\paperheight){
+\parbox[t][\paperheight]{\paperwidth}{
+\vfill
+\centering\includegraphics[angle=#2]{#1}
+\vfill
+}
+}
+}
+\makeatother
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language italian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2.5cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Implementare nel linguaggio JAVA e C++ l'algoritmo di moltiplicazione matriciale
+ tra due matrici di interi.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C=A*B
+\]
+
+\end_inset
+
+ dove:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=(nxn)
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+B=(nxn)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Gli elementi di A e B devono essere generati in manienra randomica, con
+ valori compresti tra 1 e 10000.
+\end_layout
+
+\begin_layout Section
+Caratteristiche calcolatore utilizzato
+\end_layout
+
+\begin_layout Standard
+L'algoritmo è stato implementato nei due linguaggi di programmazione utilizzando
+ un calcolatore con le seguenti caratteristiche:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CPU
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Intel Core i7-4510U 2.00GHz to 2.60GHz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Memoria
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.00 GB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S.O
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Windows 8.1 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Versione JAVA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Java SE Runtime Environment (build 1.8.0_161)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Compilatore C++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mingw64 4.8.1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Algoritmo
+\end_layout
+
+\begin_layout Standard
+L'algoritmo è stato implementato in modo sequenziale.
+ Di seguito viene riportata l'implementazione dell'algoritmo in entrambi
+ i linguaggi di programmazione ( C++, JAVA ).
+\end_layout
+
+\begin_layout Subsection
+C++
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[language=C++,caption={Algoritmo c++}]
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <iostream>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <cstdlib>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <time.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <sys/time.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <windows.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+using namespace std;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void generaMatrice(int** , int );
+\end_layout
+
+\begin_layout Plain Layout
+
+void multiple(int , int** , int** );
+\end_layout
+
+\begin_layout Plain Layout
+
+void removeMatrix ( int**  , int **  , int );
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int main(int argc, char** argv) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	srand((unsigned)time(NULL));
+\end_layout
+
+\begin_layout Plain Layout
+
+	int n = 5000;
+\end_layout
+
+\begin_layout Plain Layout
+
+	int** A = new int* [n];
+\end_layout
+
+\begin_layout Plain Layout
+
+	int** B = new int*[n];
+\end_layout
+
+\begin_layout Plain Layout
+
+	//Inizializzazione
+\end_layout
+
+\begin_layout Plain Layout
+
+	generaMatrice(A,n);
+\end_layout
+
+\begin_layout Plain Layout
+
+	generaMatrice(B,n);
+\end_layout
+
+\begin_layout Plain Layout
+
+	clock_t start,stop;
+\end_layout
+
+\begin_layout Plain Layout
+
+	LARGE_INTEGER startTime, endTime, frequency;
+\end_layout
+
+\begin_layout Plain Layout
+
+	QueryPerformanceFrequency(&frequency);
+\end_layout
+
+\begin_layout Plain Layout
+
+	double pcFreq = double (frequency.QuadPart);
+\end_layout
+
+\begin_layout Plain Layout
+
+	QueryPerformanceCounter(&startTime);
+\end_layout
+
+\begin_layout Plain Layout
+
+		multiple(n,A,B);
+\end_layout
+
+\begin_layout Plain Layout
+
+	QueryPerformanceCounter(&endTime);
+\end_layout
+
+\begin_layout Plain Layout
+
+	double time = double(endTime.QuadPart - startTime.QuadPart);
+\end_layout
+
+\begin_layout Plain Layout
+
+	time = time / pcFreq;
+\end_layout
+
+\begin_layout Plain Layout
+
+	cout<< " Tempo calcolato : "<<time<<endl;
+\end_layout
+
+\begin_layout Plain Layout
+
+	removeMatrix(A,B,n);
+\end_layout
+
+\begin_layout Plain Layout
+
+	system("PAUSE");
+\end_layout
+
+\begin_layout Plain Layout
+
+	return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+void generaMatrice(int** A , int n){
+\end_layout
+
+\begin_layout Plain Layout
+
+		for(int i = 0 ; i < n ; i++){
+\end_layout
+
+\begin_layout Plain Layout
+
+			A[i] = new int[n];
+\end_layout
+
+\begin_layout Plain Layout
+
+			for(int j=0 ; j<n ; j++){
+\end_layout
+
+\begin_layout Plain Layout
+
+				A[i][j] = rand()%9999+1;			
+\end_layout
+
+\begin_layout Plain Layout
+
+			} 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+void multiple(int n , int** A, int** B){
+\end_layout
+
+\begin_layout Plain Layout
+
+		int somma = 0; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+		for(int j = 0 ; j < n ; j++){
+\end_layout
+
+\begin_layout Plain Layout
+
+			for(int i = 0; i < n ; i++){
+\end_layout
+
+\begin_layout Plain Layout
+
+				somma = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+				for( int k = 0 ; k < n ; k++){
+\end_layout
+
+\begin_layout Plain Layout
+
+					somma += A[j][k]*B[k][i];
+\end_layout
+
+\begin_layout Plain Layout
+
+				} 			
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+void removeMatrix ( int** A , int ** B , int n){
+\end_layout
+
+\begin_layout Plain Layout
+
+	for(int i = 0 ; i < n ; i++){
+\end_layout
+
+\begin_layout Plain Layout
+
+		delete A[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+		delete B[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+	} 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	delete A;
+\end_layout
+
+\begin_layout Plain Layout
+
+	delete B;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Java
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[language=Java,caption={Algoritmo java}]
+\end_layout
+
+\begin_layout Plain Layout
+
+package esercizio;
+\end_layout
+
+\begin_layout Plain Layout
+
+import java.util.Random;
+\end_layout
+
+\begin_layout Plain Layout
+
+public class Prodotto {
+\end_layout
+
+\begin_layout Plain Layout
+
+	public Prodotto() {
+\end_layout
+
+\begin_layout Plain Layout
+
+		// TODO Auto-generated constructor stub
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	public static void main(String[] args) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		// TODO Auto-generated method stub
+\end_layout
+
+\begin_layout Plain Layout
+
+		int n = 5000;
+\end_layout
+
+\begin_layout Plain Layout
+
+		int[][] A = new int[n][n];
+\end_layout
+
+\begin_layout Plain Layout
+
+		int[][] B = new int[n][n];
+\end_layout
+
+\begin_layout Plain Layout
+
+		long tempoExec = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+		//Inizializzazione
+\end_layout
+
+\begin_layout Plain Layout
+
+		generaMatrice(A,n);
+\end_layout
+
+\begin_layout Plain Layout
+
+		generaMatrice(B,n);
+\end_layout
+
+\begin_layout Plain Layout
+
+		long startTime = System.nanoTime();
+\end_layout
+
+\begin_layout Plain Layout
+
+			multiple(n,A,B);
+\end_layout
+
+\begin_layout Plain Layout
+
+		long endTime = System.nanoTime();
+\end_layout
+
+\begin_layout Plain Layout
+
+		tempoExec = endTime - startTime;
+\end_layout
+
+\begin_layout Plain Layout
+
+		System.out.println("Tempo : "+ tempoExec + " ns");
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	public static void generaMatrice(int[][] A , int n){
+\end_layout
+
+\begin_layout Plain Layout
+
+		Random random = new Random();
+\end_layout
+
+\begin_layout Plain Layout
+
+		for(int i = 0 ; i < n ; i++){
+\end_layout
+
+\begin_layout Plain Layout
+
+			for(int j=0 ; j<n ; j++){
+\end_layout
+
+\begin_layout Plain Layout
+
+				A[i][j] = random.nextInt(9999)+1;
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	public static void multiple(int n , int[][] A, int[][] B){
+\end_layout
+
+\begin_layout Plain Layout
+
+		int somma = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+		for(int j = 0 ; j < n ; j++){
+\end_layout
+
+\begin_layout Plain Layout
+
+			for(int i = 0; i < n ; i++){
+\end_layout
+
+\begin_layout Plain Layout
+
+				somma = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+				for( int k = 0 ; k < n ; k++){
+\end_layout
+
+\begin_layout Plain Layout
+
+					somma += A[j][k]*B[k][i];
+\end_layout
+
+\begin_layout Plain Layout
+
+				}
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Analisi
+\end_layout
+
+\begin_layout Standard
+L'esercizio è stato svolto andando ad effettuare il test su matrici di 3
+ dimensioni differenti :
+\end_layout
+
+\begin_layout Itemize
+1000x1000
+\end_layout
+
+\begin_layout Itemize
+5000x5000
+\end_layout
+
+\begin_layout Itemize
+10000x10000
+\end_layout
+
+\begin_layout Standard
+Inizialmente si è fatto un test di 10 osservazioni per ognuno delle dimensioni
+ sopra elencate, con l'obiettivo di individuare una dimensione del campione
+ 
+\shape italic
+n 
+\shape default
+, con un livello di confidenza del 95% , 
+\begin_inset Quotes eld
+\end_inset
+
+z = 1,960
+\begin_inset Quotes erd
+\end_inset
+
+, ed un'accuratezza 
+\shape italic
+r=3% 
+\shape default
+, utilizzando la seguente relazione:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n=\left(\frac{100*z*s}{r*\bar{x}}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I risultati ottenuti sono i seguenti :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Deviazione Standard
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+#Campioni
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+COV%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14159,79
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+172,47106
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,633269
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,218034
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1568,056
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+26,487036
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,217904
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,6891639
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7,064102
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,5376983
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24,730508
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7,6117012
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Java
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23233,08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+227,12826
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,294624
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,9651446
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2524,8131
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20,976291
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,294624
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,8308057
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,8461892
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,0827223
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3,605681
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,9064229
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Come si può notare dai risultati ottenuti, la formula indica che per ottenere
+ quel livello di confidenza bisogna utilizzare almeno 25 campioni, ma per
+ poter utilizzare il teorema del limite centrale, scegliamo di prendere
+ un numero di campioni pari a 30.
+\end_layout
+
+\begin_layout Section
+Risultati
+\end_layout
+
+\begin_layout Standard
+Di seguito sono riportati i risultati sottoforma di grafici, i quali riportano
+ i tempi rilevati in C++ e in Java per ognuna delle dimensioni definite
+ per le matrici.
+\end_layout
+
+\begin_layout Subsection
+Java
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/Esercizio 1 MATRICE/Java10000.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Java n = 10000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/Esercizio 1 MATRICE/Java5000.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Java n = 5000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/Esercizio 1 MATRICE/Java1000.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Java n = 1000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+C++
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/Esercizio 1 MATRICE/C++10000.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+C++ n = 10000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/Esercizio 1 MATRICE/C++5000.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+C++ n = 5000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/Esercizio 1 MATRICE/C++1000.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+C++ n = 1000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Analisi risultati
+\end_layout
+
+\begin_layout Standard
+Con l'ausilio del tool JMP sono stati analizzati i dati raccolti effettuando
+ uno studio della distribuzione di probabilità dei campioni estratti, e
+ andando a trovare per ognuno il proprio intervallo di confidenza al 95%.
+\end_layout
+
+\begin_layout Standard
+Di seguito sono riportati i risultati ottenuti:
+\end_layout
+
+\begin_layout Subsubsection
+Java
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/Esercizio 1 MATRICE/DistribuzioneJava10000.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Java n = 10000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/Esercizio 1 MATRICE/DistribuzioneJava5000.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Java n = 5000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/Esercizio 1 MATRICE/DistribuzioneJava1000.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Java n = 1000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+C++
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/Esercizio 1 MATRICE/DistribuzioneC++10000.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+C++ n = 10000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/Esercizio 1 MATRICE/DistribuzioneC++5000.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+C++ n = 5000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/Esercizio 1 MATRICE/DistribuzioneC++1000.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+C++ n = 1000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Analisi intervalli di confidenza
+\end_layout
+
+\begin_layout Standard
+Come è possibile notare dai grafici riportati, nessuno degli intervalli
+ di confidenza contiene lo zero, pertanto è possibile rigettare l'ipotesi
+ di media nulla, e quindi ciò significa che la media della popolazione è
+ diversa da 0 per ogni valore di n.
+ Inoltre di seguito sono riportati i grafici relativi ai confronti tra i
+ relativi intervalli di confidenza.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/Esercizio 1 MATRICE/Intervallo10000.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ n = 10000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/Esercizio 1 MATRICE/Intervallo5000.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+n = 5000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/Esercizio 1 MATRICE/Intervallo1000.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+n = 1000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dai grafici sopra riportati si è potuto notare che gli intervalli di confidenza
+ non si sovrappongono mai, pertanto è possibile affermare che i campioni
+ non provengono da una stessa popolazione.
+\end_layout
+
+\begin_layout Subsection
+Conclusioni
+\end_layout
+
+\begin_layout Standard
+Infine è stato possibile trarre le seguenti conclusioni:
+\end_layout
+
+\begin_layout Itemize
+Per dimensione n = 10000, C++ riesce a fornire dei tempi migliori rispetto
+ a Java.
+\end_layout
+
+\begin_layout Itemize
+Per dimensione n = 5000, C++ riesce a fornire dei tempi migliori rispetto
+ a Java.
+\end_layout
+
+\begin_layout Itemize
+Per dimensione n = 1000, Java riesce a fornire dei tempi migliori rispetto
+ a C++.
+\end_layout
+
+\end_body
+\end_document
