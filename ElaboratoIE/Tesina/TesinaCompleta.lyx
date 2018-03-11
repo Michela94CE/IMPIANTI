@@ -9,6 +9,7 @@
 % LOGO
 \usepackage{eso-pic,graphicx}
 \makeatletter
+\usepackage{matlab-prettifier}
 \newcommand\BackgroundPicture[2]{
 \setlength{\unitlength}{1pt}
 \put(0,\strip@pt\paperheight){
@@ -64,7 +65,7 @@ morecomment=[s]{--}
 
 \fancyhead[RO,LE]{\bfseries \leftmark}
 \fancyfoot[LE,RO]{\thepage}
-\fancyfoot[LO,CE]{Elaborato di SI: Sistemi Informativi}
+\fancyfoot[LO,CE]{Tesina IE: Impianti di Elaborazione}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \cfoot{}
@@ -130,6 +131,7 @@ morecomment=[s]{--}
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\listings_params "style={Matlab-editor}"
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -216,15 +218,11 @@ status open
 
 
 \backslash
-title{Elaborato di Sistemi Informativi 
+title{Tesina IE:  
 \backslash
 
 \backslash
-PubliEuro SaS 
-\backslash
-
-\backslash
-AMP Solutions} 
+IMPIANTI DI ELABORAZIONE} 
 \end_layout
 
 \end_inset
@@ -259,17 +257,7 @@ author{Galli Antonio - Mat.
 
 \backslash
 Gravina Michela - Mat.
- M63/0708
-\backslash
-
-\backslash
-Valletta Paolo - Mat.
- M63/0723
-\end_layout
-
-\begin_layout Plain Layout
-
-}
+ M63/708}
 \end_layout
 
 \end_inset
@@ -388,14 +376,14 @@ begin{mainmatter}
 
 \end_layout
 
-\begin_layout Chapter*
-Introduzione
+\begin_layout Chapter
+Application Benchmark
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "cap00 - Introduzione/cap00.lyx"
+filename "esercizio1-matrici/cap01.lyx"
 
 \end_inset
 
@@ -403,13 +391,13 @@ filename "cap00 - Introduzione/cap00.lyx"
 \end_layout
 
 \begin_layout Chapter
-L'azienda
+PCA Analysis
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "cap01 - L'azienda/cap01.lyx"
+filename "Esercizio2-PCA/cap02.lyx"
 
 \end_inset
 
@@ -417,13 +405,13 @@ filename "cap01 - L'azienda/cap01.lyx"
 \end_layout
 
 \begin_layout Chapter
-Business Process Re-engineering
+Web Server Capacity Test
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "cap02 - Reingegnerizzazione/cap02.lyx"
+filename "Esercizio3-server/cap01.lyx"
 
 \end_inset
 
@@ -431,13 +419,13 @@ filename "cap02 - Reingegnerizzazione/cap02.lyx"
 \end_layout
 
 \begin_layout Chapter
-Sistema informatico: OpenERP
+Dependability
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "cap03 - ERP/cap03.lyx"
+filename "Esercizio4-Dependability/cap04.lyx"
 
 \end_inset
 
@@ -445,13 +433,13 @@ filename "cap03 - ERP/cap03.lyx"
 \end_layout
 
 \begin_layout Chapter
-Studio fattibilità
+Mean Value Analysis
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "cap04 - Studio di fattibilità/cap04.lyx"
+filename "Esercizio5-teoriaCode/cap03.lyx"
 
 \end_inset
 
@@ -459,13 +447,27 @@ filename "cap04 - Studio di fattibilità/cap04.lyx"
 \end_layout
 
 \begin_layout Chapter
-Project Management
+Field Failure Data Analysis
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "cap5 - Project Management/cap05.lyx"
+filename "Esercizio6-FFDA/cap05.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Performance Degradation
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "Esercizio7-Android/cap01.lyx"
 
 \end_inset
 

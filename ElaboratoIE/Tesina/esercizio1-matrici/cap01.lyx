@@ -893,21 +893,15 @@ Inizialmente si è fatto un test di 10 osservazioni per ognuno delle dimensioni
  sopra elencate, con l'obiettivo di individuare una dimensione del campione
  
 \shape italic
-n 
+n
 \shape default
-, con un livello di confidenza del 95% , 
-\begin_inset Quotes eld
-\end_inset
-
-z = 1,960
-\begin_inset Quotes erd
-\end_inset
-
-, ed un'accuratezza 
+, tale da ottenere un intervallo di confidenza considerando un livello di
+ confidenza del 95% ed un'accuratezza 
 \shape italic
-r=3% 
+r=3%
 \shape default
-, utilizzando la seguente relazione:
+.
+ Si utilizza quindi, la seguente relazione: 
 \end_layout
 
 \begin_layout Standard
@@ -976,7 +970,7 @@ Deviazione Standard
 \begin_inset Text
 
 \begin_layout Plain Layout
-#Campioni
+#Osservazioni
 \end_layout
 
 \end_inset
@@ -1336,9 +1330,9 @@ Java
 
 \begin_layout Standard
 Come si può notare dai risultati ottenuti, la formula indica che per ottenere
- quel livello di confidenza bisogna utilizzare almeno 25 campioni, ma per
- poter utilizzare il teorema del limite centrale, scegliamo di prendere
- un numero di campioni pari a 30.
+ quel livello di confidenza bisogna utilizzare almeno 25 osservazioni, ma
+ per poter utilizzare il teorema del limite centrale, scegliamo di prendere
+ un numero di osservazioni pari a 30.
 \end_layout
 
 \begin_layout Section
@@ -1365,7 +1359,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/Esercizio 1 MATRICE/Java10000.png
-	scale 50
+	scale 80
 
 \end_inset
 
@@ -1403,7 +1397,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/Esercizio 1 MATRICE/Java5000.png
-	scale 50
+	scale 80
 
 \end_inset
 
@@ -1437,7 +1431,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/Esercizio 1 MATRICE/Java1000.png
-	scale 50
+	scale 80
 
 \end_inset
 
@@ -1475,7 +1469,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/Esercizio 1 MATRICE/C++10000.png
-	scale 50
+	scale 80
 
 \end_inset
 
@@ -1509,7 +1503,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/Esercizio 1 MATRICE/C++5000.png
-	scale 50
+	scale 80
 
 \end_inset
 
@@ -1543,7 +1537,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/Esercizio 1 MATRICE/C++1000.png
-	scale 50
+	scale 80
 
 \end_inset
 
@@ -1573,8 +1567,8 @@ Analisi risultati
 
 \begin_layout Standard
 Con l'ausilio del tool JMP sono stati analizzati i dati raccolti effettuando
- uno studio della distribuzione di probabilità dei campioni estratti, e
- andando a trovare per ognuno il proprio intervallo di confidenza al 95%.
+ uno studio della distribuzione di probabilità e andando a trovare per ognuno
+ il proprio intervallo di confidenza al 95%.
 \end_layout
 
 \begin_layout Standard
@@ -1595,7 +1589,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/Esercizio 1 MATRICE/DistribuzioneJava10000.PNG
-	scale 50
+	scale 60
 
 \end_inset
 
@@ -1629,7 +1623,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/Esercizio 1 MATRICE/DistribuzioneJava5000.PNG
-	scale 50
+	scale 60
 
 \end_inset
 
@@ -1663,7 +1657,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/Esercizio 1 MATRICE/DistribuzioneJava1000.PNG
-	scale 50
+	scale 60
 
 \end_inset
 
@@ -1701,7 +1695,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/Esercizio 1 MATRICE/DistribuzioneC++10000.PNG
-	scale 50
+	scale 60
 
 \end_inset
 
@@ -1735,7 +1729,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/Esercizio 1 MATRICE/DistribuzioneC++5000.PNG
-	scale 50
+	scale 60
 
 \end_inset
 
@@ -1769,7 +1763,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/Esercizio 1 MATRICE/DistribuzioneC++1000.PNG
-	scale 50
+	scale 60
 
 \end_inset
 
@@ -1798,12 +1792,13 @@ Analisi intervalli di confidenza
 \end_layout
 
 \begin_layout Standard
-Come è possibile notare dai grafici riportati, nessuno degli intervalli
- di confidenza contiene lo zero, pertanto è possibile rigettare l'ipotesi
- di media nulla, e quindi ciò significa che la media della popolazione è
- diversa da 0 per ogni valore di n.
- Inoltre di seguito sono riportati i grafici relativi ai confronti tra i
- relativi intervalli di confidenza.
+Per ogni dimensione, è stato considerato lo stesso numero di osservazioni.
+ Tuttavia non possiamo parlare di osservazioni accoppiate in quanto le osservazi
+oni i-esime dei due linguaggi di programmazione sono state ottenute considerando
+ input diversi.
+ Per questo motivo, si procede nell'analisi andando a confrontare gli intervalli
+ di confidenza verificandone la sovrapposizione.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1816,7 +1811,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/Esercizio 1 MATRICE/Intervallo10000.png
-	scale 50
+	scale 80
 
 \end_inset
 
@@ -1845,12 +1840,12 @@ status collapsed
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/Esercizio 1 MATRICE/Intervallo5000.png
-	scale 50
+	scale 80
 
 \end_inset
 
@@ -1879,12 +1874,12 @@ n = 5000
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/Esercizio 1 MATRICE/Intervallo1000.png
-	scale 50
+	scale 80
 
 \end_inset
 
@@ -1910,8 +1905,12 @@ n = 1000
 
 \begin_layout Standard
 Dai grafici sopra riportati si è potuto notare che gli intervalli di confidenza
- non si sovrappongono mai, pertanto è possibile affermare che i campioni
- non provengono da una stessa popolazione.
+ non si sovrappongono mai, pertanto 
+\emph on
+non
+\emph default
+ è possibile affermare, al livello di confidenza scelto, che i campioni
+ provengono da una stessa popolazione.
 \end_layout
 
 \begin_layout Subsection
